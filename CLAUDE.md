@@ -1,4 +1,4 @@
-# Claude Code Instructions: match-insights-sse
+# Claude Code Instructions: open-football-sse
 
 ## Development method: TDCG
 
