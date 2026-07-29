@@ -1,4 +1,4 @@
-# Contributing to match-insights-sse
+# Contributing to open-football-sse
 
 Thanks for your interest in contributing. A few rules keep this project consistent and reviewable.
 
