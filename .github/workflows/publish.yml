@@ -7,7 +7,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: leandrodalbo/match-insights-sse
+  IMAGE_NAME: leandrodalbo/open-football-sse
 
 jobs:
   package:

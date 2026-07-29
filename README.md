@@ -1,6 +1,6 @@
-# match-insights-sse
+# open-football-sse
 
-A lightweight SSE (Server-Sent Events) relay server for the Match Insights platform. It polls a backend API for live match events and broadcasts the data in real-time to connected clients.
+A lightweight SSE (Server-Sent Events) relay server for the Open Football Project platform. It polls a backend API for live match events and broadcasts the data in real-time to connected clients.
 
 ## How it works
 
@@ -38,8 +38,8 @@ npm start         # run compiled output
 ## Docker
 
 ```bash
-docker build -t match-insights-sse .
+docker build -t open-football-sse .
 docker run -p 5005:5005 \
   -e API_HOST=http://your-api \
-  match-insights-sse
+  open-football-sse
 ```
