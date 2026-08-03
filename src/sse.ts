@@ -37,6 +37,7 @@ function registerChannel(path: string, endpoint: string, refreshMs: number) {
 
 registerChannel("/events", `${API_HOST}/api/live/events`, EVENTS_REFRESH);
 registerChannel("/events/charts", `${API_HOST}/api/charts/all`, CHARTS_REFRESH);
+registerChannel("/events/charts/odds", `${API_HOST}/api/charts/odds/fixtures`, CHARTS_REFRESH);
 
 app.listen(PORT, () => {
   console.log("SSE server running on port", PORT);
