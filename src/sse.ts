@@ -24,12 +24,23 @@ function registerChannel(path: string, endpoint: string, refreshMs: number) {
   }
 
   app.get(path, (req, res) => {
-    res.setHeader("Content-Type", "text/event-stream");
-    res.setHeader("Cache-Control", "no-cache");
-    res.setHeader("Connection", "keep-alive");
+    try {
+      res.setHeader("Content-Type", "text/event-stream");
+      res.setHeader("Cache-Control", "no-cache");
+      res.setHeader("Connection", "keep-alive");
 
-    addNewClient(req, res);
-    refresh();
+      addNewClient(req, res);
+      refresh();
+    } catch (err) {
+      console.error("Failed to initialize SSE client", err);
+      // If headers haven't been sent yet, send 500 response
+      if (!res.headersSent) {
+        res.status(500).json({ error: "Internal server error" });
+      } else {
+        // SSE started, close connection
+        res.end();
+      }
+    }
   });
 
   setInterval(refresh, refreshMs);
